@@ -18,7 +18,7 @@
  string chaine = "<table border = 1> <tr> <td> Id Intervention </td> <td> Description </td> ";
         chaine += "<td> Date </td> <td> Statut </td> <td> Montant </td> <td> Technicien </td> <td> Client</td> </tr> ";
 
-        List <Orange.Intervention> lesInterventions = uneBDD.selectAllInterventions ();
+        List <Orange.Intervention> lesInterventions = uneBDD.selectAllInterventions();
 
         foreach (Orange.Intervention uneIntervention in lesInterventions)
         {
