@@ -16,7 +16,7 @@
           <form method="post" action="">
               <table border  ="0">
                   <tr>
-                      <td>Description</td><td> <textarea name="description" rows ="10" cols="100"></textarea></textarea></td>
+                      <td>Description</td><td> <textarea name="description" rows ="10" cols="100"></textarea></td>
                   </tr>
                    <tr>
                       <td>Date Intervention</td><td> <input type="date" name="dateinter"></td>
@@ -60,6 +60,20 @@
             uneBDD.insertIntervention(uneIntervention);
 
         }
+        if(Request["action"]!=null && Request["idinter"] != null)
+        {
+            int idinter = int.Parse(Request["idinter"]);
+            string action = Request["action"];
+            if(action == "sup")
+            {
+                uneBDD.deleteIntervention(idinter);
+
+            }
+            else
+            {
+
+            }
+        }
 
         %>
 
@@ -73,11 +87,17 @@
         {
             chaine += "<tr> <td>"+uneIntervention.iDinter + "</td> <td> "+ uneIntervention.DESCRIPTION 
             + "</td> <td>" + uneIntervention.DATEINTER +"</td> <td> " + uneIntervention.STATUT +"</td> <td> "+uneIntervention.MONTANT 
-            + "</td> <td>" + uneIntervention.TECHNICIEN +"</td> <td> "+uneIntervention.CLIENT+"</td></tr>";  
+            + "</td> <td>" + uneIntervention.TECHNICIEN +"</td> <td> "+uneIntervention.CLIENT+"</td>"
+
+             +"<td>"
+             +"  <a href ='Default.aspx?action=sup&idinter="+uneIntervention.iDinter + "'>supprimer</a>"
+             +" <a href ='Default.aspx?action=edit&idinter="+uneIntervention.iDinter + "'>editer</a>"
+             +" </td></tr>";
+            
         }
         chaine += "</table>"; 
         %>
-        
+     
         <%= chaine %>
 </body>
 </html>
