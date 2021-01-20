@@ -59,7 +59,7 @@
             uneBDD.insertIntervention(uneIntervention);
 
         }
-
+%>
 <h2>  Liste des interventions </h2>
 <%
 
