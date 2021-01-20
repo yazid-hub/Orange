@@ -8,6 +8,7 @@ namespace Orange
         private float montant;
         private string technicien, client;
 
+
         public Intervention()
         {
             this.idInter = 0;
@@ -28,7 +29,6 @@ namespace Orange
             this.technicien = technicien;
             this.client = client;
         }
-
         public Intervention(string description, string dateinter, string statut, float montant, string technicien, string client)
         {
             this.idInter = 0;
@@ -39,7 +39,7 @@ namespace Orange
             this.technicien = technicien;
             this.client = client;
         }
-        public int iDinter
+        public int IDInter
         {
             get
             {
@@ -116,7 +116,5 @@ namespace Orange
                 this.montant = value;
             }
         }
-
-
     }
 }

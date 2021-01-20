@@ -32,10 +32,19 @@ namespace Orange
             }
 
         }
-        public List<Intervention> selectAllInterventions()
+        public List<Intervention> selectAllInterventions(string mot = "")
         {
             List<Intervention> lesInterventions = new List<Intervention>();
-            string requete = "select * from intervention ; ";
+            string requete = "";
+            if (mot == "")
+            {
+                requete = "select * from intervention ; ";
+            }
+            else
+            {
+                requete = "select * from intervention where statut like '%" + mot + "%' or description like '%" + mot + "%' or technicien like '%" + mot
+                    + "%' or client like '%" + mot + "%' ; ";
+            }
 
             try
             {
@@ -161,11 +170,12 @@ namespace Orange
                 cmd.Parameters.AddWithValue("@statut", uneIntervention.STATUT);
                 cmd.Parameters.AddWithValue("@technicien", uneIntervention.TECHNICIEN);
                 cmd.Parameters.AddWithValue("@client", uneIntervention.CLIENT);
-                cmd.Parameters.AddWithValue("@idinter", uneIntervention.iDinter);
+                cmd.Parameters.AddWithValue("@idinter", uneIntervention.IDInter);
                 //on execute la requete
                 cmd.ExecuteNonQuery();
 
                 this.maConnexion.Close();
+                Console.WriteLine(uneIntervention.IDInter);
             }
             catch (Exception exp)
             {
