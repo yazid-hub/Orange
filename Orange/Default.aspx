@@ -37,13 +37,13 @@
                     </td>       
              </tr> 
               <tr>
-                <td> Montant à payer  </td> <td> <input type="text" name="montant" value ="<%= (uneInter==null)? "":uneInter.MONTANT+"" %>" > </td>       
+                <td>Montant à payer</td> <td> <input type="text" name="montant" value ="<%= (uneInter==null)? "":uneInter.MONTANT+"" %>" > </td>       
              </tr> 
               <tr>
-                <td> Technicien  </td> <td> <input type="text" name="technicien" value ="<%= (uneInter==null)? "":uneInter.TECHNICIEN %>"> </td>       
+                <td> Technicien</td> <td> <input type="text" name="technicien" value ="<%= (uneInter==null)? "":uneInter.TECHNICIEN %>"> </td>       
              </tr> 
               <tr>
-                <td> Client  </td> <td> <input type="text" name="client"  value ="<%= (uneInter==null)? "":uneInter.CLIENT %>"> </td>       
+                <td> Client</td> <td> <input type="text" name="client"  value ="<%= (uneInter==null)? "":uneInter.CLIENT %>"> </td>       
              </tr> 
               <tr>
                 <td> <input type="reset" name="Annuler" value="Annuler">  </td> <td> 

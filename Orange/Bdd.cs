@@ -156,8 +156,7 @@ namespace Orange
             {
                 this.maConnexion.Open();
 
-                requete = "update intervention set description= @description, dateinter= @dateinter, montant= @montant , statut =@statut, " +
-                    " technicien = @technicien, client = @client where idinter = @idinter ;";
+                requete = "update intervention set description= @description, dateinter= @dateinter, montant= @montant , statut =@statut,  technicien = @technicien, client = @client where idinter = @idinter ;";
 
                 MySqlCommand cmd = this.maConnexion.CreateCommand();
 
@@ -184,7 +183,7 @@ namespace Orange
             }
         }
 
-        public Intervention selectWhereIntervention(int idInter)
+    public Intervention selectWhereIntervention(int idInter)
         {
             Intervention uneIntervention = null;
             string requete = "select * from intervention where  idInter = @idinter ; ";
